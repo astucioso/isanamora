@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer namorar comigo?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="playMusic()">
+    <div class="container">
+        <h1>Quer namorar comigo?</h1>
+        
+        <div class="photos">
+            <img src="images/foto1.jpg" alt="Foto dela 1">
+            <img src="images/foto2.jpg" alt="Foto dela 2">
+            <img src="images/foto3.jpg" alt="Foto dela 3">
+        </div>
+
+        <p class="message">Desde que te conheci, minha vida ficou mais especial e colorida. Sinto que quero estar ao seu lado em todos os momentos e fazer você sorrir todos os dias. <strong>Quer ser minha namorada?</strong></p>
+        
+        <div class="buttons">
+            <button class="yes-button" onclick="showMessage('positive')">Sim, eu aceito!</button>
+            <button class="no-button" onclick="showMessage('negative')">Não, eu não aceito!</button>
+        </div>
+
+        <!-- Mensagens que aparecem ao clicar nos botões -->
+        <p id="positive-message" class="special-message">❤️ Você me faz a pessoa mais feliz do mundo minha princesa! eu te amo ❤️</p>
+        <p id="negative-message" class="special-message">amor, isso não é uma opção aceita essa porra logo</p>
+    </div>
+
+    <!-- Adicionando o áudio diretamente na página principal -->
+    <audio id="music" src="musica.mp3" preload="auto" loop></audio>
+
+    <script>
+        function playMusic() {
+            // Reproduz a música ao carregar a página
+            const music = document.getElementById("music");
+            music.play();
+        }
+
+        function showMessage(type) {
+            // Esconde ambas as mensagens
+            document.getElementById("positive-message").style.visibility = "hidden";
+            document.getElementById("negative-message").style.visibility = "hidden";
+
+            // Mostra a mensagem correspondente
+            if (type === 'positive') {
+                document.getElementById("positive-message").style.visibility = "visible";
+            } else {
+                document.getElementById("negative-message").style.visibility = "visible";
+            }
+        }
+    </script>
+</body>
+</html>
